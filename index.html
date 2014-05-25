@@ -1,1 +1,114 @@
-Sooooooon....
+<!DOCTYPE html>
+<!--[if lt IE 7]>	<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Proper Code - Santi Grau's online portfolio for visual development</title>
+		<meta name="description" content="Portfolio of visual developer Santi Grau">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="http://dlkh7inj8d3zv.cloudfront.net/css/main.min.css">
+		<script src="http://dlkh7inj8d3zv.cloudfront.net/js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<div id="max">
+			<div id="max_inner">
+				<span>Please</span>, scroll down to go fullscreen!
+			</div>
+		</div>
+		<div id="about_iphone">
+			<div class="inner">
+				Proper code is Santi Grau's Portfolio. A creative full-end developer based in NYC which truly believes that technology can be (or is) beautiful. This is a short / reduced iphone version. <b>Make sure to check the full desktop or tablet version</b> for more project details.<br>
+				<p><a href="javascript:void(0)">Current Location: NYC since 12/11/2013</a></p>
+				<p><a href="javascript:void(0)">Linked in</a> / <a href="javascript:void(0)">Twitter</a> / <a href="javascript:void(0)">Instagram</a></p>
+				<p><a href="mailto:betterwith@proper-code.com">betterwith@proper-code.com</a></p>
+			</div>
+		</div>
+		<div id="info_iphone">
+			<div class="inner"></div>
+		</div>
+		<div id="navi">
+			<div id="previews"></div>
+			<div id="naviButs">
+				<a href="javascript:void(0)" class="bignavi prev" onclick="navi._prevPreview()"><</a>
+				<a href="javascript:void(0)" class="bignavi next" onclick="navi._nextPreview()">></a>
+				<a href="javascript: void(0);" class="main navi topnavi tl" id="infoBut">+</a>
+				<a href="javascript: void(0);" class="main navi topnavi tl" id="gridBut" onclick="gridmenu._open()"><span>_<br>_<br>_</span></a>
+				<a href="javascript: void(0);" class="main navi topnavi sec" t="project_menu" id="menuBut"></a>
+				<a href="javascript: void(0);" class="main navi topnavi sec" t="about_menu" id="aboutBut"></a>
+				<a href="javascript: void(0);" class="main navi topnavi sec" t="contact_menu" id="contactBut"></a>
+				<div id="preloaderBox"></div>
+				<a href="javascript: void(0);" class="project navi" id="openBut" onclick="navi._openProject()">OPEN<br>PROJECT</a>
+				<a href="javascript: void(0);" class="project navi" id="openInfoBut" onclick="navi._openProjectInfo()">Project<br>Info</a>
+				<span class="project navi" id="pTitle"><span class="main"></span> <br /><span class="sub"></span></span>
+			</div>
+			
+			<div id="about_menu" class="topnaviContent">
+				<p><b>Proper code</b> is Santi Grau's portfolio.</p>
+				<p>A creative full-end developer based in NYC</p>
+				<p>which truly believes that technology must be beautiful.</p>
+				<p></p>
+				<ul id="project_menu"></ul>
+				<p></p>
+				<p><a href="javascript:void(0)">Current Location: NYC since 12/11/2013</a></p>
+				<p><a href="javascript:void(0)">Linked in</a></p>
+				<p><a href="mailto:betterwith@proper-code.com">betterwith@proper-code.com</a></p>
+			</div>
+			<div id="breadcrumbs">
+				<span id="projectTitle" >
+					<div id="bc_marker" class="svgCont"></div>
+					<div id="bc_loader" class="svgCont"></div>
+					<span class="marker_title"></span>
+					<span class="marker_subtitle"></span>
+				</span>
+				<div id="bc_navi_marker"></div>
+			</div>
+		</div>
+		<a href="javascript: void(0);" class="side navi s_navi project_navi arrow" id="s_infoBut" onclick="navi.project._getProjectInfo()">i</a>
+		<div id="project_navi">
+			<a href="javascript: void(0);" class="side navi project_navi" id="closeBut" onclick="navi.project._backToIndex()">x</a>
+			<div id="project_breadcrumbs"></div>
+			<div id="pr_navi_marker"></div>
+			<a href="javascript: void(0);" class="side navi s_navi project_navi arrow" id="s_prevBut" onclick="navi.project._getPrev()">△</a>
+			<a href="javascript: void(0);" class="side navi s_navi project_navi arrow" id="s_nextBut" onclick="navi.project._getNext()">▽</a>
+		</div>
+		<div id="projectPreloader">○</div>
+		<div id="projectInfo">
+			<a href="javascript: void(0);" class="side navi s_navi project_navi arrow" id="close_infoBut" onclick="navi.project._closeProjectInfo()">x</a>
+			<div id="bodynums"></div>
+			<div id="bodycopy"></div>
+		</div>
+		<div id="p_grid">
+			<a href="javascript: void(0)" id="closegridbut" onclick="gridmenu._close();"></a>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="http://dlkh7inj8d3zv.cloudfront.net/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+		<script>
+			var _GLOBALDATA_ = {
+				environment		: 'production',
+				sererpath		: 'http://proper-code.com',
+				staticpath		: 'http://dlkh7inj8d3zv.cloudfront.net/',
+				jspath			: 'http://dlkh7inj8d3zv.cloudfront.net/js/',
+				csspath			: 'http://dlkh7inj8d3zv.cloudfront.net/css/',
+				imagpath		: 'http://dlkh7inj8d3zv.cloudfront.net/img/',
+				srcpath			: 'http://dlkh7inj8d3zv.cloudfront.net/src/',
+			};
+			var _PRELOADIMGS_ = []
+		</script>
+		<script src="http://dlkh7inj8d3zv.cloudfront.net/js/main.min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-45541930-1', 'proper-code.com');
+		  ga('send', 'pageview');
+		</script>
+		</script>
+	</body>
+</html>
