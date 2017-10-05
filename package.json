@@ -1,0 +1,40 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git"
+  },
+  "description": "Portfolio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "grunt build",
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "lct",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "*",
+    "browserify-middleware": "*",
+    "express": "*",
+    "nib": "*",
+    "pug": "*",
+    "stringify": "*",
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "uglify-js": "^3.0.15",
+    "figlet": "*"
+  },
+  "engines": {
+    "node": "6.2.0"
+  }
+}

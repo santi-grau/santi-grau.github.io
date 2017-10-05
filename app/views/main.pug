@@ -1,0 +1,69 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    title Santi Grau - Portfolio
+    link(rel='stylesheet', id='mainStylesheet' href='css/main.css')
+  body
+    #main
+        #intro
+            p
+                | #[b About] 
+                | Santi Grau. Born in Barcelona, based in San Francisco. Designer, coder, technologist, artist, prototyper, generalist, problem solver, creative.
+                | #[b Currently]
+                | Design Lead at the Creative Technology team of Pinterest. Also freelancing on some interesting ventures.
+                | #[b Previously]
+                | Creative Technologist at Apple, founder of Codekünstler design studio, 
+                | Creative Lead of the graphic design department at Cero Barcelona, Creative Tech at Icebergs
+                | #[b Interests]
+                | Design, art, AR/VR, web technologies, 3d, spatial UI, cinema, typography, Unity, 
+                | physical installations, webGL, Touchdesigner, Processing, Vainglory.
+            p
+                | Most of the things I've been working on are under some kind of NDA / privacy agreement <br>
+                | so cannot post them online #[span(style='position: absolute; margin-top : -2px; margin-left : 3px') 😞]
+            p
+                | Please, #[a(href='javascript:void(0)') reach out] to request a portfolio or more info. <br>
+                | ...Or contact through #[a(href='https://www.linkedin.com/in/santigrau/', target='_blank') LinkedIn]
+
+        script.
+            document.getElementsByTagName('a')[0].addEventListener('click', function(){
+                var s = '', h = [ '6D61696C746F3A', '73616E74694070726F7065722D636F64652E636F6D'];
+                for (var i = 0; i < h[0].length; i += 2) s += String.fromCharCode(parseInt(h[0].substr(i, 2), 16));
+                for (var i = 0; i < h[1].length; i += 2) s += String.fromCharCode(parseInt(h[1].substr(i, 2), 16));
+                location.href = s;
+            });
+        //- p
+        //-     b Latest projects
+        //- .project#eina
+        //-     .inner
+        //-         .frame
+        //-     p
+        //-         | #[b Eina 50 Anniversary] Self generated modular logo where everyday a new version is created and anyone can modifiy it. ( life at proper-code.com/50anys )
+        //- .project#ar
+        //-     .inner
+        //-         video
+        //-             source( src='img/ar/arpods-lo.mp4', type='video/mp4')
+        //-     p
+        //-         | #[b Pinterest AR] Exploration of ARKit and research of potential usecases for Pinterest. ( + Hiro + Patrik )
+        //- .project#apple
+        //-     .inner
+        //-     p
+        //-         | #[b Apple 3d things] Explorations to bring 3d Apple products to the web using procedural modelling, PBR, baking etc ( models are under 100 k ) ( + Israel )
+        //- .project#exp
+        //-     .inner
+        //-     p
+        //-         | #[b Xmas experiments] VR experience for the xmas experiments ( + Israel )
+        //- .project#bulli
+        //-     .inner
+        //-     p
+        //-         | #[b El Bulli] Code system for the exhibition 'Risk, freedom and creativity' by Ferran Adria ( + Dani + Mario )
+        //- .project#icebergs
+        //-     .inner
+        //-     p
+        //-         | #[b Icebergs] Webgl iceberg generator and design + development of MVP ( + Albert Pereta )
+        
+
+    //- script(src='js/main.js')
