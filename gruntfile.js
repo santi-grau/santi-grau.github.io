@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "docs/index.html": "app/views/main.pug"
+          "index.html": "app/views/main.pug"
         }
       }
     },
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          'docs/css/main.css': 'app/css/main.styl'
+          'css/main.css': 'app/css/main.styl'
         }
       }
     }
@@ -61,7 +61,6 @@ module.exports = function(grunt) {
 
   // Build Tasks
   grunt.registerTask('build', [
-    'clean',
     'pug',
     'stylus'
   ]);

@@ -6,7 +6,9 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     title Santi Grau - Portfolio
+    meta(name='description', content='AR, VR, code, design, teleportation... you name it.')
     link(rel='stylesheet', id='mainStylesheet' href='css/main.css')
+    meta(name='google-site-verification', content='Eyu0GkFgkSJBiLDtUf55DUKIXgNkfAtdZ0G-qelJr8Y')
   body
     #main
         #intro
@@ -27,14 +29,20 @@ html
             p
                 | Please, #[a(href='javascript:void(0)') reach out] to request a portfolio or more info. <br>
                 | ...Or contact through #[a(href='https://www.linkedin.com/in/santigrau/', target='_blank') LinkedIn]
-
+                                                                                                                                         
         script.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-45541930-1', 'proper-code.com');
+            ga('send', 'pageview');
             document.getElementsByTagName('a')[0].addEventListener('click', function(){
                 var s = '', h = [ '6D61696C746F3A', '73616E74694070726F7065722D636F64652E636F6D'];
                 for (var i = 0; i < h[0].length; i += 2) s += String.fromCharCode(parseInt(h[0].substr(i, 2), 16));
                 for (var i = 0; i < h[1].length; i += 2) s += String.fromCharCode(parseInt(h[1].substr(i, 2), 16));
                 location.href = s;
-            });
+            });  
         //- p
         //-     b Latest projects
         //- .project#eina
