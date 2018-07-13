@@ -16,6 +16,8 @@ var nib = require('nib');
 var fs = require('fs');
 var pckg = require('./package.json');
 var pug = require('pug');
+var request = require('request');
+var bodyParser = require('body-parser');
 
 // ┌────────────────────────────────────────────────────────────────────┐
 // | Initialize vars + constants
@@ -27,16 +29,20 @@ var port = Number( process.env.PORT || 5000 );
 // | App setup
 // └────────────────────────────────────────────────────────────────────┘
 
-browserify.settings({ transform: [stringify(['.svg', '.glsl', '.vs', '.fs'])]});
+// browserify.settings( { transform: [ stringify( [ '.glsl', '.fnt', '.json', '.vs', '.fs', '.pug' ] ) ] } );
 
+app.disable('etag');
 app.set('views', __dirname + '/app/views');
-app.use('/js', browserify('./app/js'));
+app.use('/js', browserify('./app/js', { transform: [ stringify( [ '.glsl', '.fnt', '.vs', '.fs', '.svg' ] ), 'pugify'] }));
+
 app.set('view engine', 'pug');
 app.use('/*.css', function(req, res){
 	var reqUrl = req.originalUrl.split('/');
 	var file = reqUrl[reqUrl.length-1].slice(0, -4);
 	res.set('Content-Type', 'text/css').send( stylus.render( fs.readFileSync(__dirname + '/app/css/' + file + '.styl', 'utf-8') )); 
 });
+
+var jsonParser = bodyParser.json()
 
 app.use(express.static(__dirname + '/app'));
 
@@ -61,5 +67,6 @@ figlet.fonts(function(err, fonts) {
 		console.log('└─────> ' + pckg.description);
 		console.log('└─────> v ' + pckg.version);
 		console.log('└─────> Listening on port: ' + port);
+		for( var i = 0 ; i < process.argv.length ; i++ ) if( process.argv[i] == 'midi' ) console.log('└─────> Using midi ');
 	});
 });

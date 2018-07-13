@@ -11,20 +11,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-    copy: {
-      build: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: "app",
-          src: [
-            "img/**/*",
-            "audio/**/*"
-          ],
-          dest: "docs"
-        }]
-      }
-    },
     pug: {
       compile: {
         options: {
