@@ -1,5 +1,6 @@
 var Controller = require('./Controller');
 var Body = require('./Body');
+var Composer = require('./Composer');
 
 var Jansky = function( dims, renderer ){
 	this.renderer = renderer;
@@ -20,6 +21,8 @@ var Jansky = function( dims, renderer ){
 	this.body = new Body( this.controller, { fontSize : 13, word : this.data.song } );
 	this.scene.add( this.body );
 
+	var renderTarget = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
+	this.composer = new Composer( this.renderer, renderTarget, this.scene, this.camera, this.controller );
 }
 
 Jansky.prototype.setActive = function( x, y ){
@@ -48,6 +51,16 @@ Jansky.prototype.step = function( time ){
 	this.controller.step( time );
 	this.body.step( time , this.renderer );
 
+}
+
+Jansky.prototype.step = function( time ){
+	this.time += this.timeStep;
+	this.controller.step( time );
+	this.body.step( time , this.renderer );
+}
+
+Jansky.prototype.render = function( time ){
+	this.composer.step( time );
 }
 
 module.exports = Jansky;

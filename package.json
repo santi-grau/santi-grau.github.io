@@ -31,6 +31,7 @@
     "simplex-noise": "^2.4.0",
     "stringify": "*",
     "stylus": "*",
+    "svg-mesh-3d": "^1.1.0",
     "three": "^0.93.0",
     "three-effectcomposer": "0.0.1",
     "three-obj-loader": "^1.1.3",

@@ -33,11 +33,13 @@ Intro.prototype.projectsLoaded = function( ) {
 }
 
 Intro.prototype.setActive = function( project ){
+	if( !this.objs[project] ) return console.log('no project selected');
 	this.active = project;
 	( this.objs[project].setActive ) && this.objs[project].setActive( this.mouse.x, this.mouse.y, this.dims );
 }
 
 Intro.prototype.mouseMove = function( x, y ){
+	// if( !this.objs[this.active] ) return console.log('no project selected');
 	if( !this.active ) return;
 	this.mouse = { x : x, y : y };
 	( this.objs[this.active].setMouse ) && this.objs[this.active].setMouse( x, y );

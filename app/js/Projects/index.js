@@ -1,7 +1,7 @@
 var projects = {
 	'wwdc' : {
 		colorScheme : 0,
-		title : 'WWDC,generative identity',
+		title : 'WWDC - Generative identity',
 		preview : require('./Wwdc'),
 		info : require( './Wwdc/copy.pug' ),
 		assets : [
@@ -70,67 +70,79 @@ var projects = {
 			}
 		]
 	},
-	'jinmin' : {
+	'megazero' : {
 		colorScheme : 0,
-		title : 'Jin Min,corporate volumetric identity',
-		preview : require('./Jinmin'),
-		info : require( './Jinmin/copy.pug' ),
+		title : 'MEGAZERO - Bootleg of Trochut\'s font',
+		preview : require('./Megazero'),
+		info : require( './Megazero/copy.pug' ),
 		assets : [
 			{
+				type : 'youtube',
+				src : 'oq6VyuKrs7U',
+				col : 1,
+				dims : [1094,702]
+			},
+			{
+				type : 'youtube',
+				src : 'aGSSFTxO4Dk',
+				col : 2,
+				dims : [1094,702]
+			},
+			{
 				type : 'image',
-				src : 'jinmin/jincomp_03.png',
+				src : 'megazero/b.gif',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_05.jpg',
+				src : 'megazero/c.gif',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_09.jpg',
+				src : 'megazero/f.gif',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_10.jpg',
+				src : 'megazero/g.gif',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_13.jpg',
+				src : 'megazero/i.gif',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_14.jpg',
+				src : 'megazero/k.gif',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_17.jpg',
+				src : 'megazero/m.gif',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_18.jpg',
+				src : 'megazero/u.gif',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_21.jpg',
+				src : 'megazero/x.gif',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'jinmin/jincomp_22.jpg',
+				src : 'megazero/z.gif',
 				col : 2
 			}
 		]
 	},
 	'icebergs' : {
 		colorScheme : 0,
-		title : 'Icebergs,data vizualisation',
+		title : 'ICEBERGS - Data vizualisation',
 		preview : require('./Icebergs'),
 		info : require( './Icebergs/copy.pug' ),
 		assets : [
@@ -169,7 +181,7 @@ var projects = {
 	},
 	'remolacha' : {
 		colorScheme : 1,
-		title : 'Remolacha Hacklab,generative data vizualisation',
+		title : 'REMOLACHA HACKLAB - Generative data vizualisation',
 		preview : require('./Remolacha'),
 		info : require( './Remolacha/copy.pug' ),
 		assets : [
@@ -262,7 +274,7 @@ var projects = {
 	},
 	'mugshots' : {
 		colorScheme : 0,
-		title : 'Mugshots,face recognition based political satire',
+		title : 'MUGSHOTS - Face recognition based political satire',
 		preview : require('./Mugshots'),
 		info : require( './Mugshots/copy.pug' ),
 		assets : [
@@ -325,7 +337,7 @@ var projects = {
 	},
 	'jansky' : {
 		colorScheme : 0,
-		title : 'Jansky,generative A/V',
+		title : 'JANSKY  - Generative A/V',
 		preview : require('./Jansky'),
 		info : require( './Jansky/copy.pug' ),
 		assets : [
@@ -374,7 +386,7 @@ var projects = {
 	},
 	'maslo' : {
 		colorScheme : 1,
-		title : 'Maslo, an AI driven companion',
+		title : 'MASLO - An AI driven companion',
 		preview : require('./Maslo'),
 		info : require( './Maslo/copy.pug' ),
 		assets : [
@@ -435,9 +447,67 @@ var projects = {
 			}
 		]
 	},
+	'jinmin' : {
+		colorScheme : 0,
+		title : 'JIN MIN - Corporate volumetric identity',
+		preview : require('./Jinmin'),
+		info : require( './Jinmin/copy.pug' ),
+		assets : [
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_03.png',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_05.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_09.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_10.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_13.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_14.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_17.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_18.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_21.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jinmin/jincomp_22.jpg',
+				col : 2
+			}
+		]
+	},
 	'eina' : {
 		colorScheme : 0,
-		title : 'Eina 50 anys,commemorative procedural logo',
+		title : 'EINA 50 ANNIVERSARY - Commemorative procedural logo',
 		preview : require('./Eina'),
 		info : require( './Eina/copy.pug' ),
 		assets : [
@@ -530,7 +600,7 @@ var projects = {
 	},
 	'quantum' : {
 		colorScheme : 1,
-		title : 'Quantum font,experimental typeface',
+		title : 'QUANTUM FONT - Experimental typeface',
 		preview : require('./Quantum'),
 		info : require( './Quantum/copy.pug' ),
 		assets : [
@@ -584,7 +654,7 @@ var projects = {
 	},
 	'bulli' : {
 		colorScheme : 1,
-		title : 'El Bulli,procedural illustrations',
+		title : 'EL BULLI - Procedural illustrations',
 		preview : require('./Bulli'),
 		info : require( './Bulli/copy.pug' ),
 		assets : [
@@ -687,7 +757,7 @@ var projects = {
 	},
 	'sxsw' : {
 		colorScheme : 0,
-		title : 'Pinterest@SXSW 2018,tastegraph visualizer',
+		title : 'PINTEREST@SXSW 2018 - Tastegraph visualizer',
 		preview : require('./Sxsw'),
 		info : require( './Sxsw/copy.pug' ),
 		assets : [
@@ -762,7 +832,7 @@ var projects = {
 	},
 	'santamonica' : {
 		colorScheme : 0,
-		title : 'Santamonica,font script for corporate identity',
+		title : 'SANTAMONICA - font script for corporate identity',
 		preview : require('./Santamonica'),
 		info : require( './Santamonica/copy.pug' ),
 		assets : [

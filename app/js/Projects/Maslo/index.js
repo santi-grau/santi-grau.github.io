@@ -30,7 +30,7 @@ var Maslo = function( ){
 		this.group.add( ring.mesh );
 	}
 
-	for( var i = 0 ; i < 8 ; i++ ) this.rings[i].setColor( [1,1,1], [0,0,0] );
+	for( var i = 0 ; i < 8 ; i++ ) this.rings[i].setColor( [0.8666666667,0.8666666667,0.8666666667], [0.3,0.3,0.3] );
 
 	this.scene.add( this.group );
 

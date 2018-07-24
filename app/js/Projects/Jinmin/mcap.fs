@@ -43,6 +43,18 @@ float snoise(vec2 v){
 	return 130.0 * dot(m, g);
 }
 
+vec3 gammaCorrect(vec3 color, float gamma){
+    return pow(color, vec3(1.0/gamma));
+}
+
+vec3 levelRange(vec3 color, float minInput, float maxInput){
+    return min(max(color - vec3(minInput), vec3(0.0)) / (vec3(maxInput) - vec3(minInput)), vec3(1.0));
+}
+
+vec3 finalLevels(vec3 color, float minInput, float gamma, float maxInput){
+    return gammaCorrect(levelRange(color, minInput, maxInput), gamma);
+}
+
 void main() {
 	
 	vec3 finalNormal = vNormal;
@@ -61,10 +73,12 @@ void main() {
 	
 	vec3 base = texture2D( tMatCap, calculatedNormal ).rgb;
 
-    // screen blending
-    if( useScreen == 1. ) base = vec3( 1. ) - ( vec3( 1. ) - base ) * ( vec3( 1. ) - base );
+	base = vec3( 1. ) - ( vec3( 1. ) - base ) * ( vec3( 1. ) - base );
 
-    float dNoise = ( snoise( vUv * 0.7 ) + 1.0 ) / 2.0 * 0.3 + 0.7;
+	// float dNoise = ( snoise( vUv * 0.7 ) + 1.0 ) / 2.0 * 0.3 + 0.7;
 
-	gl_FragColor = vec4( base * val * dNoise, 1. );
+	// gl_FragColor = vec4( base * val * dNoise, 1. );
+
+	float c = ( finalNormal.r + finalNormal.g + finalNormal.b ) / 3.0 + ( 1.0 - finalNormal.r ) * 0.5;
+	gl_FragColor = vec4( vec3( c ), 1. );
 }

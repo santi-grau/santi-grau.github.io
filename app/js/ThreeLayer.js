@@ -51,8 +51,8 @@ ThreeLayer.prototype.step = function( time ) {
 	// this.renderPass.scene = this.scene;
 	// this.renderPass.camera = this.camera;
 	// this.composer.render();
-
-	this.renderer.render( this.scene, this.camera );
+	if( this.preview.render ) this.preview.render( time );
+	else this.renderer.render( this.preview.scene, this.preview.camera );
 };
 
 module.exports = ThreeLayer;

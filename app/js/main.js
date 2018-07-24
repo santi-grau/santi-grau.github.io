@@ -34,8 +34,6 @@ var Main = function( ) {
 	for ( var project in this.projects ) projectList.push( { id : project, title : this.projects[ project ].title, colorScheme : this.projects[ project ].colorScheme } );
 	this.domLayer = new DomLayer( { }, projectList );
 
-	
-
 	window.addEventListener( 'resize', this.resize.bind( this ) );
 	window.addEventListener( 'mousemove', this.mouseMove.bind( this ) );
 	window.addEventListener( 'scroll', this.scroll.bind( this ) );
@@ -46,8 +44,7 @@ Main.prototype.projectEnter = function( project ){
 	if( Projects[ project ].colorScheme == 1 ) document.body.classList.add( 'colorInvert' );
 	else document.body.classList.remove( 'colorInvert' );
 	this.active = project;
-	this.threeLayer.scene = this.intro.objs[this.active].scene;
-	this.threeLayer.camera = this.intro.objs[this.active].camera;
+	this.threeLayer.preview = this.intro.objs[this.active];
 	this.intro.setActive( this.active );
 }
 
@@ -63,7 +60,7 @@ Main.prototype.scroll = function( e ){
 	var val = 1 - Math.max( 0, this.node.offsetHeight - scroll ) / this.node.offsetHeight;
 	this.threeLayer.node.style.opacity = 1 - ( 1 * val );
 
-	this.threeLayer.node.style.transform = 'scale(' + ( 1 - val * 0.2 ) + ', ' + ( 1 - val * 0.2 ) + ')' ;
+	// this.threeLayer.node.style.transform = 'scale(' + ( 1 - val * 0.2 ) + ', ' + ( 1 - val * 0.2 ) + ')' ;
 	
 	this.projectLayer.preloader.node.style.opacity = 0;
 	this.projectLayer.scrolling();
@@ -95,9 +92,8 @@ Main.prototype.closeProject = function(){
 
 Main.prototype.introLoaded = function( ){
 	this.intro.setActive( this.active );
-	this.threeLayer.scene = this.intro.objs[this.active].scene;
-	this.threeLayer.camera = this.intro.objs[this.active].camera;
-
+	this.threeLayer.preview = this.intro.objs[this.active];
+	
 	if( Projects[ this.active ].colorScheme == 1 ) document.body.classList.add( 'colorInvert' );
 	else document.body.classList.remove( 'colorInvert' );
 

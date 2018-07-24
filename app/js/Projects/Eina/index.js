@@ -20,7 +20,7 @@ var Eina = function( dims ){
 		this.group.add( plane );
 	}
 	for( var i = 0 ; i < 100 ; i++ ){
-		var material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
+		var material = new THREE.MeshBasicMaterial( { color: 0x222222 } );
 		var plane = new THREE.Mesh( geometry, material );
 		plane.visible = false;
 		this.group.add( plane );

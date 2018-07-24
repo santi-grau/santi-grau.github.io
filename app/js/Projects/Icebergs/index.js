@@ -1,7 +1,8 @@
 var objs = require( './geos.json' );
 var SimplexNoise = require('simplex-noise');
 
-var Icebergs = function( ){
+var Composer = require('./Composer');
+var Icebergs = function( dims, renderer ){
 	this.group = new THREE.Object3D();
 
 	this.scene = new THREE.Scene();
@@ -31,6 +32,9 @@ var Icebergs = function( ){
 	}
 
 	this.scene.add( this.group );
+
+	var renderTarget = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
+	this.composer = new Composer( renderer, renderTarget, this.scene, this.camera );
 }
 
 Icebergs.prototype.setActive = function( x, y ){
@@ -62,19 +66,14 @@ Icebergs.prototype.step = function( time ){
 
 	this.time += this.timeInc;
 	var n = this.simplex.noise2D( this.time, 0.5 );
-	
-	// if( n > -0.7 && !this.wireframe ){
-	// 	this.group.children[ this.activeIb ].material = new THREE.MeshBasicMaterial( { color : 0xffffff, wireframe : true } );
-	// 	this.wireframe = true;
-	// }
-	// if( n < -0.7 && this.wireframe ){
-	// 	this.group.children[ this.activeIb ].material = this.material;
-	// 	this.wireframe = false;
-	// }
 
 	this.rotationEased += ( this.rotation - this.rotationEased ) * 0.1;
 	this.group.rotation.x = this.rotationEased;
 	for( var i = 0 ; i < this.group.children.length; i++ ) this.group.children[ i ].rotation.z += 0.01;
+}
+
+Icebergs.prototype.render = function( time ){
+	this.composer.step( time );
 }
 
 module.exports = Icebergs;
