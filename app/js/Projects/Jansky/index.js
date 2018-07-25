@@ -21,8 +21,8 @@ var Jansky = function( dims, renderer ){
 	this.body = new Body( this.controller, { fontSize : 13, word : this.data.song } );
 	this.scene.add( this.body );
 
-	var renderTarget = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
-	this.composer = new Composer( this.renderer, renderTarget, this.scene, this.camera, this.controller );
+	this.postRT = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
+	this.composer = new Composer( this.renderer, this.postRT, this.scene, this.camera, this.controller );
 }
 
 Jansky.prototype.setActive = function( x, y ){

@@ -1,6 +1,5 @@
 var Letters = require('./Letters');
 var SimplexNoise = require('simplex-noise');
-var Gsap = require('gsap');
 
 var Body = function( controller, settings ){
 	THREE.Object3D.apply(this, arguments);

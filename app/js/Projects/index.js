@@ -1,6 +1,7 @@
 var projects = {
 	'wwdc' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'WWDC - Generative identity',
 		preview : require('./Wwdc'),
 		info : require( './Wwdc/copy.pug' ),
@@ -72,6 +73,7 @@ var projects = {
 	},
 	'megazero' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'MEGAZERO - Bootleg of Trochut\'s font',
 		preview : require('./Megazero'),
 		info : require( './Megazero/copy.pug' ),
@@ -142,6 +144,7 @@ var projects = {
 	},
 	'icebergs' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'ICEBERGS - Data vizualisation',
 		preview : require('./Icebergs'),
 		info : require( './Icebergs/copy.pug' ),
@@ -181,6 +184,7 @@ var projects = {
 	},
 	'remolacha' : {
 		colorScheme : 1,
+		inHome : true,
 		title : 'REMOLACHA HACKLAB - Generative data vizualisation',
 		preview : require('./Remolacha'),
 		info : require( './Remolacha/copy.pug' ),
@@ -274,6 +278,7 @@ var projects = {
 	},
 	'mugshots' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'MUGSHOTS - Face recognition based political satire',
 		preview : require('./Mugshots'),
 		info : require( './Mugshots/copy.pug' ),
@@ -337,6 +342,7 @@ var projects = {
 	},
 	'jansky' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'JANSKY  - Generative A/V',
 		preview : require('./Jansky'),
 		info : require( './Jansky/copy.pug' ),
@@ -386,6 +392,7 @@ var projects = {
 	},
 	'maslo' : {
 		colorScheme : 1,
+		inHome : true,
 		title : 'MASLO - An AI driven companion',
 		preview : require('./Maslo'),
 		info : require( './Maslo/copy.pug' ),
@@ -449,6 +456,7 @@ var projects = {
 	},
 	'jinmin' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'JIN MIN - Corporate volumetric identity',
 		preview : require('./Jinmin'),
 		info : require( './Jinmin/copy.pug' ),
@@ -507,6 +515,7 @@ var projects = {
 	},
 	'eina' : {
 		colorScheme : 0,
+		inHome : false,
 		title : 'EINA 50 ANNIVERSARY - Commemorative procedural logo',
 		preview : require('./Eina'),
 		info : require( './Eina/copy.pug' ),
@@ -600,6 +609,7 @@ var projects = {
 	},
 	'quantum' : {
 		colorScheme : 1,
+		inHome : true,
 		title : 'QUANTUM FONT - Experimental typeface',
 		preview : require('./Quantum'),
 		info : require( './Quantum/copy.pug' ),
@@ -654,6 +664,7 @@ var projects = {
 	},
 	'bulli' : {
 		colorScheme : 1,
+		inHome : true,
 		title : 'EL BULLI - Procedural illustrations',
 		preview : require('./Bulli'),
 		info : require( './Bulli/copy.pug' ),
@@ -757,6 +768,7 @@ var projects = {
 	},
 	'sxsw' : {
 		colorScheme : 0,
+		inHome : true,
 		title : 'PINTEREST@SXSW 2018 - Tastegraph visualizer',
 		preview : require('./Sxsw'),
 		info : require( './Sxsw/copy.pug' ),
@@ -832,6 +844,7 @@ var projects = {
 	},
 	'santamonica' : {
 		colorScheme : 0,
+		inHome : false,
 		title : 'SANTAMONICA - font script for corporate identity',
 		preview : require('./Santamonica'),
 		info : require( './Santamonica/copy.pug' ),

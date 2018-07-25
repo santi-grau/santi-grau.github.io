@@ -5,6 +5,7 @@ var isMobile = navigator.userAgent.match(/(iPhone|Android|BlackBerry)/);
 if( isMobile ) document.body.classList.add('mobile');
 
 window.THREE = require('three');
+window.gsap = require('gsap');
 var ThreeLayer = require('./ThreeLayer');
 var DomLayer = require('./DomLayer');
 var Projects = require('./Projects');
@@ -15,12 +16,12 @@ var Intro = require('./Intro');
 var Main = function( ) {
 	this.node = document.getElementById('main');
 
-	document.getElementById('6D61696C746F3A').addEventListener('click', this.openMl.bind(this) );
 	if( isMobile ) return;
 	
 	var obs = [];
-	for ( var project in Projects ) obs.push( project );
-	this.active = String( obs[ Math.floor( Math.random() * obs.length ) - 1 ] );
+	for ( var project in Projects ) if( Projects[project].inHome ) obs.push( project );
+	this.active = String( obs[ Math.floor( Math.random() * ( obs.length ) ) ] );
+	// this.active = 'megazero';
 
 	this.threeLayer = new ThreeLayer( { } );
 
@@ -44,15 +45,8 @@ Main.prototype.projectEnter = function( project ){
 	if( Projects[ project ].colorScheme == 1 ) document.body.classList.add( 'colorInvert' );
 	else document.body.classList.remove( 'colorInvert' );
 	this.active = project;
-	this.threeLayer.preview = this.intro.objs[this.active];
+	this.threeLayer.setActive( this.intro.objs[this.active] );
 	this.intro.setActive( this.active );
-}
-
-Main.prototype.openMl = function( ){
-	var s = '', h = [ '6D61696C746F3A', '73616E74694070726F7065722D636F64652E636F6D'];
-	for (var i = 0; i < h[0].length; i += 2) s += String.fromCharCode(parseInt(h[0].substr(i, 2), 16));
-	for (var i = 0; i < h[1].length; i += 2) s += String.fromCharCode(parseInt(h[1].substr(i, 2), 16));
-	location.href = s;
 }
 
 Main.prototype.scroll = function( e ){

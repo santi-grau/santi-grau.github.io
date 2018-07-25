@@ -33,8 +33,8 @@ var Icebergs = function( dims, renderer ){
 
 	this.scene.add( this.group );
 
-	var renderTarget = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
-	this.composer = new Composer( renderer, renderTarget, this.scene, this.camera );
+	this.postRT = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
+	this.composer = new Composer( renderer, this.postRT, this.scene, this.camera );
 }
 
 Icebergs.prototype.setActive = function( x, y ){

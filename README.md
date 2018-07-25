@@ -2,10 +2,10 @@ Proper code website...
 
 # Todo
 
-[ ] Post process on rollover
-[ ] Fix time interval videos
-[ ] Home redesign
 [ ] Project redesign and sequence
 [ ] Project assets
+[ ] Responsive
 [ ] Mobile
 [ ] About page
+[ ] Reconsider home
+[ ] Uncaught TypeError: Cannot read property 'classList' of null at DomLayer.bbLeave

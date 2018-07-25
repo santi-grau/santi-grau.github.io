@@ -1,5 +1,6 @@
 var EventEmitter = require('events').EventEmitter;
 var inherits = require( 'util' ).inherits;
+var EffectComposer = require('three-effectcomposer')(THREE);
 
 var Intro = function( options, instanceQueue, dims, renderer ) {
 	this.options = options || {};
@@ -20,6 +21,25 @@ Intro.prototype.addProject = function( instanceQueue ){
 	this.objs[ project.id ] = new project.preview( this.dims, this.renderer );
 	if( this.objs[project.id].on ) this.objs[ project.id ].on( 'ready', this.projectReady.bind( this, instanceQueue, project.id ) );
 	else this.projectReady( instanceQueue, project.id );
+
+	// add final effect
+
+	var pixelShader = {
+		uniforms: {
+			'tDiffuse': { value: null },
+			'amount': { value: this.distort },
+			'time': { value: 0.0 },
+		},
+		vertexShader: require('./Shaders/pixel.vs'),
+		fragmentShader: require('./Shaders/pixel.fs')
+	};
+
+	if( this.objs[ project.id ].composer ){
+		var pixelPass = new EffectComposer.ShaderPass( pixelShader );
+		this.objs[ project.id ].composer.addPass( pixelPass );
+		pixelPass.enabled = false;
+		pixelPass.renderToScreen = false;
+	}
 }
 
 Intro.prototype.projectReady = function( instanceQueue, id ){
