@@ -5,17 +5,13 @@ var DomLayer = function( options, projectList ) {
 	this.options = options || {};
 	this.node = document.getElementById('domLayer');
 
-	this.menuNode = document.getElementById('menu');
-	this.menuBBS = this.node.getElementsByClassName('svgbb');
-	this.menuTXTS = this.node.getElementsByClassName('svgtxt');
-	this.overlays = this.node.getElementsByClassName('overlay');
-	
-	for( var i = 0 ; i < this.menuBBS.length ; i++ ) this.menuBBS[ i ].addEventListener( 'mouseenter', this.bbEnter.bind( this ) ); 
-	for( var i = 0 ; i < this.menuBBS.length ; i++ ) this.menuBBS[ i ].addEventListener( 'mouseleave', this.bbLeave.bind( this ) ); 
-	
+	this.spacer1 = document.getElementById('spacer1');
+	this.spacer2 = document.getElementById('spacer2');
+	this.projectList = document.getElementById('projectList');
+
 	document.getElementById('6D61696C746F3A').addEventListener('click', this.openMl.bind(this) );
 
-	for( var i = 0 ; i < projectList.length; i++ ) this.addProject( projectList[i] );
+	for( var i = 0 ; i < projectList.length; i++ ) this.addProject( projectList[i], i, projectList.length );
 	var links = this.node.getElementsByClassName('project');
 	for( var i = 0 ; i < links.length ; i++ ) links[i].addEventListener( 'mouseenter', this.linkEnter.bind( this ) );
 	for( var i = 0 ; i < links.length ; i++ ) links[i].addEventListener( 'mouseleave', this.linkLeave.bind( this ) );
@@ -33,50 +29,45 @@ DomLayer.prototype.openMl = function( ){
 }
 
 DomLayer.prototype.resize = function( dims ) {
-	var margin = 10;
-	var menuDims = [ parseInt(this.menuNode.getAttribute( 'width' ) ), parseInt(this.menuNode.getAttribute( 'height' ) ) ];
-	var menuAR = menuDims[1] / menuDims[0];
-	var screenAR = ( dims.height - margin * 2 ) / ( dims.width - margin * 2 );
+	var lineMargin = 2;
+	this.spacer1.innerHTML = '&nbsp;';
+	var lHeight = this.spacer1.parentNode.offsetHeight;
 	
-	var scale;
-	if( screenAR > menuAR ) scale = ( dims.width - margin * 2 ) / menuDims[0];
-	else scale = ( dims.height - margin * 2 ) / menuDims[1];
+	var introHeight = document.getElementById('intro').offsetHeight / lHeight;
+	var pHeight = Math.floor( this.projectList.offsetHeight / lHeight );
+	var contactHeight = document.getElementById('contact').offsetHeight / lHeight;
+	
+	this.spacer1.innerHTML = '';
+	this.spacer2.innerHTML = '';
 
-	var offset = [ ( ( dims.width - margin * 2 ) - menuDims[0] * scale ) / 2 + margin, ( ( dims.height - margin * 2 ) - menuDims[1] * scale ) / 2 + margin ];
-	this.menuNode.style.transform = 'translate3d( ' + offset[0] + 'px, ' + offset[1] + 'px, 0px ) scale(' + scale + ')';
+	var lines = Math.floor( this.node.offsetHeight / lHeight );
+
+	var linesBefore = Math.floor( ( lines - lineMargin - pHeight ) / 2 );
+	var linesToAddBefore = Math.max( linesBefore - introHeight, 1 );
+	for( var i =  0; i < linesToAddBefore; i++ ){
+		if( i > 0 ) this.spacer1.innerHTML += '<br>';
+		this.spacer1.innerHTML += '&nbsp;';
+	}
+
+	var linesToAddAfter = Math.max( 1, lines - lineMargin - ( contactHeight + linesToAddBefore + introHeight + pHeight ) );
+	for( var i = 0; i < linesToAddAfter; i++ ){
+		if( i > 0 ) this.spacer2.innerHTML += '<br>';
+		this.spacer2.innerHTML += '&nbsp;';
+	}
 
 	this.node.classList.add( 'ready' );
 };
 
-DomLayer.prototype.addProject = function( project ){
-	var projectList = document.getElementById('projectList');
+DomLayer.prototype.addProject = function( project, index, length ){
 	var link = document.createElement( 'a' );
 	link.dataset.colorScheme = project.colorScheme;
-	link.setAttribute( 'href', 'javascript:void(0);' );
+	link.setAttribute( 'href', '/#' + project.id );
 	link.dataset.id = project.id;
 	link.classList.add('project')
 	link.classList.add('innerOverlay')
-	
 	link.innerHTML = project.title;
-	projectList.childNodes[0].appendChild( link );
-	projectList.childNodes[0].innerHTML += '<br>';
-}
-
-DomLayer.prototype.bbEnter = function( e ){
-	for( var i = 0 ; i < this.overlays.length ; i++ ) this.overlays[ i ].classList.remove('active');
-	for( var i = 0 ; i < this.menuTXTS.length ; i++ ) this.menuTXTS[ i ].classList.add('active');
-	var bb = e.currentTarget;
-	bb.previousSibling.classList.remove('active');
-	var node = document.getElementById( bb.dataset.trigger );
-	node.classList.add( 'active' );
-}
-
-DomLayer.prototype.bbLeave = function( e ){
-	if( e.toElement &&e.toElement.classList.contains( 'innerOverlay' ) ) return;
-	var bb = e.currentTarget;
-	bb.previousSibling.classList.add('active');
-	var node = document.getElementById( bb.dataset.trigger );
-	node.classList.remove( 'active' );
+	this.projectList.appendChild( link );
+	if( index < length - 1 ) this.projectList.innerHTML += '<br>';
 }
 
 DomLayer.prototype.linkEnter = function( e ){
@@ -88,6 +79,7 @@ DomLayer.prototype.linkLeave = function( e ){
 }
 
 DomLayer.prototype.linkClick = function( e ){
+	window.location.hash = e.target.dataset.id;
 	this.emit( 'projectClick', e.target.dataset.id );
 }
 

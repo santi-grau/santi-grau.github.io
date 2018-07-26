@@ -76,7 +76,7 @@ Remolacha.prototype.setMouse = function( x, y ){
 	this.waterPhase = 800 - v.x * 500;
 	this.waterIntensity = 1 + v.y * 2;
 	this.soil = x;
-	this.air = y;
+	this.air = 0.1 + y;
 
 	this.speed = 0.01 + v.length() / 100;
 }

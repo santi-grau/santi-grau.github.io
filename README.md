@@ -6,5 +6,3 @@ Proper code website...
 [ ] Project assets
 [ ] Mobile
 [ ] About page
-[ ] Reconsider home
-[ ] Uncaught TypeError: Cannot read property 'classList' of null at DomLayer.bbLeave

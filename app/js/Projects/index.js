@@ -74,7 +74,7 @@ var projects = {
 	'megazero' : {
 		colorScheme : 0,
 		inHome : true,
-		title : 'MEGAZERO - Bootleg of Trochut\'s font',
+		title : 'MEGAZERO - Tribute to A. Trochut',
 		preview : require('./Megazero'),
 		info : require( './Megazero/copy.pug' ),
 		assets : [
@@ -145,7 +145,7 @@ var projects = {
 	'icebergs' : {
 		colorScheme : 0,
 		inHome : true,
-		title : 'ICEBERGS - Data vizualisation',
+		title : 'ICEBERGS - Reactive A/V',
 		preview : require('./Icebergs'),
 		info : require( './Icebergs/copy.pug' ),
 		assets : [
@@ -185,7 +185,7 @@ var projects = {
 	'remolacha' : {
 		colorScheme : 1,
 		inHome : true,
-		title : 'REMOLACHA HACKLAB - Generative data vizualisation',
+		title : 'REMOLACHA HACKLAB - Generative dataviz',
 		preview : require('./Remolacha'),
 		info : require( './Remolacha/copy.pug' ),
 		assets : [
@@ -279,7 +279,7 @@ var projects = {
 	'mugshots' : {
 		colorScheme : 0,
 		inHome : true,
-		title : 'MUGSHOTS - Face recognition based political satire',
+		title : 'MUGSHOTS - CV graphics',
 		preview : require('./Mugshots'),
 		info : require( './Mugshots/copy.pug' ),
 		assets : [
@@ -343,7 +343,7 @@ var projects = {
 	'jansky' : {
 		colorScheme : 0,
 		inHome : true,
-		title : 'JANSKY  - Generative A/V',
+		title : 'JANSKY - Generative A/V',
 		preview : require('./Jansky'),
 		info : require( './Jansky/copy.pug' ),
 		assets : [
@@ -393,7 +393,7 @@ var projects = {
 	'maslo' : {
 		colorScheme : 1,
 		inHome : true,
-		title : 'MASLO - An AI driven companion',
+		title : 'MASLO - AI animation',
 		preview : require('./Maslo'),
 		info : require( './Maslo/copy.pug' ),
 		assets : [
@@ -457,7 +457,7 @@ var projects = {
 	'jinmin' : {
 		colorScheme : 0,
 		inHome : true,
-		title : 'JIN MIN - Corporate volumetric identity',
+		title : 'JIN MIN - Corporate identity',
 		preview : require('./Jinmin'),
 		info : require( './Jinmin/copy.pug' ),
 		assets : [
@@ -516,7 +516,7 @@ var projects = {
 	'eina' : {
 		colorScheme : 0,
 		inHome : false,
-		title : 'EINA 50 ANNIVERSARY - Commemorative procedural logo',
+		title : 'EINA 50 ANNIVERSARY - Procedural logo',
 		preview : require('./Eina'),
 		info : require( './Eina/copy.pug' ),
 		assets : [
@@ -845,7 +845,7 @@ var projects = {
 	'santamonica' : {
 		colorScheme : 0,
 		inHome : false,
-		title : 'SANTAMONICA - font script for corporate identity',
+		title : 'SANTAMONICA - Font script',
 		preview : require('./Santamonica'),
 		info : require( './Santamonica/copy.pug' ),
 		assets : [

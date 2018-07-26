@@ -66,7 +66,6 @@ Main.prototype.projectClick = function( project ){
 	this.projectLayer.on( 'close', this.closeProject.bind(this) );
 	this.projectLayer.on( 'loaded', this.projectLoaded.bind(this) );
 	this.threeLayer.node.style.opacity = 1;
-	window.location.hash = project;
 }
 
 Main.prototype.projectLoaded = function(){
