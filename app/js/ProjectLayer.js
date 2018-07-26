@@ -27,7 +27,9 @@ var ProjectLayer = function( project ){
 	this.rightCol = document.getElementById('modulesRight');
 
 	this.infoNode = domify( Projects[ project ].info( ) );
-	this.node.appendChild( this.infoNode );
+	// this.node.appendChild( this.infoNode );
+
+	this.closeBut.parentNode.insertBefore( this.infoNode, this.closeBut.nextSibling );
 
 	this.loadMod();
 }

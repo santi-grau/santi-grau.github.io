@@ -72,7 +72,7 @@ DomLayer.prototype.bbEnter = function( e ){
 }
 
 DomLayer.prototype.bbLeave = function( e ){
-	if( e.toElement.classList.contains( 'innerOverlay' ) ) return;
+	if( e.toElement &&e.toElement.classList.contains( 'innerOverlay' ) ) return;
 	var bb = e.currentTarget;
 	bb.previousSibling.classList.add('active');
 	var node = document.getElementById( bb.dataset.trigger );

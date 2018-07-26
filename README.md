@@ -4,7 +4,6 @@ Proper code website...
 
 [ ] Project redesign and sequence
 [ ] Project assets
-[ ] Responsive
 [ ] Mobile
 [ ] About page
 [ ] Reconsider home

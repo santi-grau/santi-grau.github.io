@@ -53,8 +53,6 @@ Main.prototype.scroll = function( e ){
 	var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 	var val = 1 - Math.max( 0, this.node.offsetHeight - scroll ) / this.node.offsetHeight;
 	this.threeLayer.node.style.opacity = 1 - ( 1 * val );
-
-	// this.threeLayer.node.style.transform = 'scale(' + ( 1 - val * 0.2 ) + ', ' + ( 1 - val * 0.2 ) + ')' ;
 	
 	this.projectLayer.preloader.node.style.opacity = 0;
 	this.projectLayer.scrolling();
