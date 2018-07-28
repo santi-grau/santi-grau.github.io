@@ -1,10 +1,10 @@
 var svgMesh3d = require('svg-mesh-3d');
-var THREE = require('three');
+// var THREE = require('three');
 
 module.exports = function( self ){
 	self.addEventListener('message',function (msg){
 		var data = JSON.parse( msg.data );
-		// self.importScripts( data.url + '/scripts/three.js' );
+		self.importScripts( data.url + '/scripts/three.min.js' );
 
 		var extrudeSVG = function( path ){
 			depth = 1;

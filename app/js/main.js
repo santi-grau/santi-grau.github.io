@@ -1,7 +1,6 @@
 window._PATH_ = 'http://localhost:5000/img/';
 if( !window.location.href.includes('localhost') ) window._PATH_ = 'https://portfolio-sg-2018.s3.amazonaws.com/';
 window.isMobile = navigator.userAgent.match(/(iPhone|Android|BlackBerry)/);
-window.THREE = require('three');
 window.gsap = require('gsap');
 var ThreeLayer = require('./ThreeLayer');
 var DomLayer = require('./DomLayer');
