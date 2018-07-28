@@ -173,7 +173,7 @@ var projects = {
 				type : 'youtube',
 				src : '_MVgQw0AKfs',
 				col : 1,
-				params : [16, 23],
+				params : [18, 23],
 				dims : [1920,1080]
 			},
 			{
@@ -391,6 +391,36 @@ var projects = {
 		assets : [
 			{
 				type : 'image',
+				src : 'jansky/js1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jansky/js2.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jansky/js3.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jansky/js4.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'jansky/js5.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'jansky/js6.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
 				src : 'jansky/download-1.jpg',
 				col : 1
 			},
@@ -407,17 +437,12 @@ var projects = {
 			},
 			{
 				type : 'image',
-				src : 'jansky/t2.gif',
-				col : 1
-			},
-			{
-				type : 'image',
 				src : 'jansky/ani.gif',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'jansky/download-2.jpg',
+				src : 'jansky/ps1.jpg',
 				col : 2
 			},
 			{
@@ -425,11 +450,6 @@ var projects = {
 				src : 'jansky/t3.gif',
 				col : 2
 			},
-			{
-				type : 'image',
-				src : 'jansky/t4.gif',
-				col : 2
-			}
 		]
 	},
 	'maslo' : {
@@ -830,6 +850,11 @@ var projects = {
 				col : 1
 			},
 			{
+				type : 'image',
+				src : 'sxsw/sxsw1a.jpg',
+				col : 2
+			},
+			{
 				type : 'youtube',
 				src : 'XOHt1uUyOm0',
 				col : 1,
@@ -840,22 +865,6 @@ var projects = {
 				src : 'fITkgodJLY4',
 				col : 1,
 				dims : [1920,1080]
-			},
-			{
-				type : 'image',
-				src : 'sxsw/idea.jpg',
-				col : 1
-			},
-			{
-				type : 'youtube',
-				src : 'D424b0I_orc',
-				col : 1,
-				dims : [1920,1080]
-			},
-			{
-				type : 'image',
-				src : 'sxsw/sxsw1a.jpg',
-				col : 2
 			},
 			{
 				type : 'youtube',
@@ -871,12 +880,40 @@ var projects = {
 			},
 			{
 				type : 'image',
-				src : 'sxsw/container.jpg',
+				src : 'sxsw/br0.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'sxsw/br2.jpg',
 				col : 2
 			},
 			{
 				type : 'image',
-				src : 'sxsw/print.jpg',
+				src : 'sxsw/br3.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'sxsw/br4.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'sxsw/idea.jpg',
+				col : 1
+			},
+			
+			{
+				type : 'youtube',
+				src : 'D424b0I_orc',
+				col : 1,
+				dims : [1920,1080]
+			},
+			
+			{
+				type : 'image',
+				src : 'sxsw/interior1.jpg',
 				col : 2
 			},
 			{
@@ -884,11 +921,6 @@ var projects = {
 				src : '3jryUsCqC-o',
 				col : 2,
 				dims : [1920,1080]
-			},
-			{
-				type : 'image',
-				src : 'sxsw/door.jpg',
-				col : 2
 			}
 			
 		]

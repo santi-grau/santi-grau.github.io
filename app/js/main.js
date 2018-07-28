@@ -66,7 +66,7 @@ Main.prototype.scroll = function( e ){
 	var val = 1 - Math.max( 0, this.node.offsetHeight - scroll ) / this.node.offsetHeight;
 	this.threeLayer.node.style.opacity = 1 - ( 1 * val );
 	
-	if( this.projectLayer.preloader.node ) this.projectLayer.preloader.node.style.opacity = 0;
+	if( this.projectLayer ) this.projectLayer.preloader.node.style.opacity = 0;
 	this.projectLayer.scrolling();
 	if( val >= 1 ) this.threeLayer.active = false;
 	else this.threeLayer.active = true;

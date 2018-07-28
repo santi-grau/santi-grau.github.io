@@ -38,7 +38,7 @@ Youtube.prototype.videoReady = function( e ){
 Youtube.prototype.step = function(){
 	if( this.ready ){
 		if( this.params ) {
-			if( this.player.getCurrentTime( ) + 0.1 > this.end ) this.player.seekTo( this.start );
+			if( this.player.getCurrentTime( ) + 0.1 > this.params[1] ) this.player.seekTo( this.params[0] );
 		}else {
 			if( this.player.getCurrentTime( ) + 0.1 > this.player.getDuration() ) this.player.seekTo( 0 );
 		}
