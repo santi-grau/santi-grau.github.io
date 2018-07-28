@@ -23,6 +23,11 @@ var Jansky = function( dims, renderer ){
 
 	this.postRT = new THREE.WebGLRenderTarget( dims.width * 2, dims.height * 2, {  } );
 	this.composer = new Composer( this.renderer, this.postRT, this.scene, this.camera, this.controller );
+	
+	this.resize( dims )
+	this.controller.step( Math.random() );
+	this.body.step( Math.random(), renderer );
+	this.render( Math.random() );
 }
 
 Jansky.prototype.setActive = function( x, y ){

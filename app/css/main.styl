@@ -20,7 +20,19 @@ body
 	width 100%
 	min-height 100%
 	overflow hidden
-	
+	#messenger
+		position fixed
+		top 0
+		left 0
+		width 100%
+		height 100%
+		z-index 1000
+		padding 30px
+		pointer-events none
+		opacity 0
+		&.active
+			opacity 1
+			animation pulse 1s infinite
 	&.projectLoaded
 		overflow auto
 		#projectLayer
@@ -182,7 +194,7 @@ body
 					height 47vw
 	.mobileOnly
 		display none
-body
+body	
 	&.mobile
 		
 		font-size 12px

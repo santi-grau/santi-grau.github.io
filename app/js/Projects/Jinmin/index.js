@@ -12,6 +12,7 @@ var Composer = require('./Composer');
 var Jinmin = function( dims, renderer ){
 	this.scene = new THREE.Scene();
 	this.camera = new THREE.OrthographicCamera();
+	this.dims = dims;
 
 	this.positions = [];
 	this.easedPositions = [];
@@ -56,8 +57,11 @@ var Jinmin = function( dims, renderer ){
 		var scale = Math.min( this.dims.width, this.dims.height ) / 20;
 		object.scale.set(scale,scale,scale);
 		this.scene.add( object );
+		this.emit( 'ready' );
 	}.bind(this));
 }
+
+inherits( Jinmin, EventEmitter );
 
 Jinmin.prototype.setActive = function( x, y ){
 	var blocks = this.scene.children[0];

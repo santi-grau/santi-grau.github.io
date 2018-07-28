@@ -106,6 +106,7 @@ Main.prototype.introLoaded = function( ){
 		this.intro.setActive( project );
 		this.threeLayer.setActive( this.intro.objs[project] );
 		this.threeLayer.preview = this.intro.objs[project];
+		this.intro.objs[project].step( Math.random() );
 		this.threeLayer.distort = 1;
 		this.threeLayer.step( Math.random() );
 		this.threeLayer.distort = 0;
@@ -128,6 +129,8 @@ Main.prototype.introLoaded = function( ){
 		this.projectEnter( loc );
 		this.projectClick( loc );
 	}
+
+	document.getElementById('messenger').classList.remove('active');
 }
 
 Main.prototype.mouseMove = function( e ){
