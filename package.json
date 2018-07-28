@@ -8,7 +8,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "grunt build && mkdir -p js && ./node_modules/browserify/bin/cmd.js -t [pugify] -t [ stringify --extensions [.obj .svg .glsl .fs .vs .fnt] ] app/js/main.js > js/main.js",
+    "build": "grunt build && mkdir -p js && ./node_modules/browserify/bin/cmd.js -t [pugify] -t [ stringify --extensions [.obj .svg .glsl .fs .vs .fnt] ] app/js/main.js > js/main.js && uglifyjs js/main.js --compress --mangle --output js/main.js",
     "start": "node main.js"
   },
   "keywords": [],
