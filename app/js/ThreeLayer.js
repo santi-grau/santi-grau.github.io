@@ -40,6 +40,7 @@ var ThreeLayer = function( options, instanceQueue ) {
 inherits( ThreeLayer, EventEmitter );
 
 ThreeLayer.prototype.setActive = function( p ){
+	
 	this.preview = p;
 	this.distort = 3;
 	
@@ -65,7 +66,6 @@ ThreeLayer.prototype.resize = function( dims ) {
 
 ThreeLayer.prototype.step = function( time ) {
 	if( !this.active ) return;
-	
 	if( this.distort > 0 ){
 		if( this.preview.render ){
 			this.preview.composer.passes[ this.preview.composer.passes.length - 2 ].renderToScreen = false;

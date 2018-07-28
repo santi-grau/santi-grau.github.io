@@ -99,6 +99,18 @@ Main.prototype.closeProject = function(){
 }
 
 Main.prototype.introLoaded = function( ){
+
+	// precompile shaders
+	this.threeLayer.resize( { x : 0, y : 0, width : this.node.offsetWidth, height : this.node.offsetHeight } );
+	for ( var project in this.intro.objs ){
+		this.intro.setActive( project );
+		this.threeLayer.setActive( this.intro.objs[project] );
+		this.threeLayer.preview = this.intro.objs[project];
+		this.threeLayer.distort = 1;
+		this.threeLayer.step( Math.random() );
+		this.threeLayer.distort = 0;
+	}
+
 	this.intro.setActive( this.active );
 	this.threeLayer.preview = this.intro.objs[this.active];
 	
