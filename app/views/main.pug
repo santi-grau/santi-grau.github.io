@@ -8,50 +8,47 @@ html
     meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     title Santi Grau - Portfolio
-    link(href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,700", rel="stylesheet")
     link(rel='stylesheet', id='mainStylesheet' href='css/main.css')
   body
-    #aboutPage
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit ligula, pulvinar feugiat tellus eget, vestibulum mollis magna. 
-        | Curabitur consectetur ligula sit amet est accumsan, ut tristique neque rutrum. Pellentesque ornare lacus non porta ullamcorper.
-        | Pellentesque fermentum rutrum metus id molestie. Pellentesque a ornare metus. Fusce aliquam ipsum sem, nec accumsan elit pharetra nec. 
-        | In eu neque id libero lacinia consectetur.
-        | Proin ullamcorper erat metus, quis posuere metus tristique in. Nullam ultricies, purus at sagittis gravida, augue purus tempor nunc, vitae ultrices purus ex ut mi. Nullam semper mollis nibh, ac suscipit sapien suscipit lacinia. Nulla quis lacus arcu. Proin cursus ultrices sem, non interdum lorem efficitur vitae. Donec luctus porta nulla, at vulputate ligula ornare nec. Fusce at dui lorem. Donec tempus lobortis tellus, id ornare diam egestas sit amet. Integer lacinia euismod urna, et finibus nisl molestie eget.
-        | Vestibulum velit erat, ultricies nec dapibus a, pretium nec massa. Nunc tempus cursus nisl blandit ornare. Mauris maximus nibh ultrices mi blandit venenatis. Proin fermentum metus eu varius imperdiet. Cras vitae accumsan purus, eget congue odio. Integer eget maximus diam, a ultricies magna. Aenean ut erat auctor, venenatis lorem ac, gravida nunc. Proin libero ante, porta ac vestibulum id, faucibus id nibh. Nam lectus nibh, auctor in vulputate vel, tincidunt non sapien. Nam molestie nisi libero. Nullam nulla metus, tempor ut enim ac, auctor iaculis lectus. Donec in risus leo.
-    #bg
     #main
+        #bg
         #threeLayer
         #domLayer
-            #intro
-                p
-                    | &nbsp;#[br]
-                    | &nbsp;
-                p
-                    span
-                        | Hola! I am Santi, a Media Artist / Designer / Technologist. Currently Design Lead at Pinterest. 
-                        | Previously Creative Tech Researcher at Apple, founder of Codekunstler  ( Barcelona )#[br]and Creative Director at Cero Design.
-                p
-                    span
+            .cont
+                #intro
+                    p
                         | &nbsp;
+                    p.filler
+                        | &nbsp;
+                    p
+                        span
+                            | Hola! I am Santi, a Media Artist / Designer / Technologist. Currently Design Lead at Pinterest. 
+                            | Previously Creative Tech Researcher at Apple, founder of Codekunstler  ( Barcelona )#[br]and Creative Director at Cero Design.
+                    p
+                        span
+                            | &nbsp;
+                    p
+                        span
+                            | Specialized in procedural / generative graphics, with a strong focus on design and typography. Passionate about motion graphics and live audio/visuals. 
+                            | I usually partner up with designers and artists to make shit happen.
+                p.filler
+                    span#spacer1
                 p
-                    span
-                        | Specialized in procedural / generative graphics, with a strong focus on design and typography. Passionate about motion graphics and live audio/visual. 
-                        | I usually partner up with designers and artists to make shit happen.
-            p
-                span#spacer1
-            p
-                span#projectList
-                    | Some of my favorite projects :#[br]
-                    | &nbsp;#[br]
-            p
-                span#spacer2
-            #contact
-                p
-                    span
-                        | Based in foggy San Francisco, available everywhere.#[br]
-                        | If you feel like reading a bit more #[a( href='javascript:void(0)' ) about me]#[br]
-                        | Any cool projects in mind? #[a( href='javascript:void(0)', id = '6D61696C746F3A' ) Contact me]#[br]
-                        | I also have an #[a( href='javascript:void(0)' ) Instagram Account] and a #[a( href='javascript:void(0)' ) LinkedIn]
+                    span#projectList
+                        span.mobileOnly &nbsp;#[br]
+                        | Some of my favorite projects :#[br]
+                        | &nbsp;#[br]
+                p.filler
+                    span#spacer2
+                #contact
+                    p
+                        span
+                            span.mobileOnly &nbsp;#[br]
+                            | Based in foggy San Francisco, available everywhere.#[br]
+                            //- | If you feel like reading a bit more #[a( href='javascript:void(0)' ) about me]#[br]
+                            | Any cool projects in mind? #[a( href='javascript:void(0)', id = '6D61696C746F3A' ) Contact me]#[br]
+                            | I also have an #[a( href='https://www.instagram.com/____santi____/', target='_blank' ) Instagram account] and a #[a( href='https://www.linkedin.com/in/santigrau/', target='_blank' ) LinkedIn]
     script(src='https://www.youtube.com/iframe_api')
     script(src='js/main.js')
     script.

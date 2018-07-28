@@ -92,6 +92,16 @@ var projects = {
 			},
 			{
 				type : 'image',
+				src : 'megazero/large1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'megazero/large2.jpg',
+				col : 2
+			},
+			{
+				type : 'image',
 				src : 'megazero/b.gif',
 				col : 1
 			},
@@ -151,19 +161,42 @@ var projects = {
 		assets : [
 			{
 				type : 'image',
-				src : 'icebergs/2.jpg',
+				src : 'icebergs/top1.jpg',
 				col : 1
 			},
 			{
 				type : 'image',
-				src : 'icebergs/3.gif',
-				col : 1
+				src : 'icebergs/top2.jpg',
+				col : 2
+			},
+			{
+				type : 'youtube',
+				src : '_MVgQw0AKfs',
+				col : 1,
+				params : [16, 23],
+				dims : [1920,1080]
 			},
 			{
 				type : 'youtube',
 				src : '_MVgQw0AKfs',
 				col : 2,
 				dims : [1920,1080]
+			},
+			{
+				type : 'image',
+				src : 'icebergs/det1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'icebergs/det2.jpg',
+				col : 2
+			},
+
+			{
+				type : 'image',
+				src : 'icebergs/3.gif',
+				col : 1
 			},
 			{
 				type : 'image',
@@ -178,6 +211,16 @@ var projects = {
 			{
 				type : 'image',
 				src : 'icebergs/5.gif',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'icebergs/ib1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'icebergs/ib2.jpg',
 				col : 2
 			}
 		]
@@ -204,7 +247,11 @@ var projects = {
 				src : 'remolacha/remolacha5.jpg',
 				col : 1
 			},
-
+			{
+				type : 'image',
+				src : 'remolacha/remolacha7.jpg',
+				col : 1
+			},
 			{
 				type : 'youtube',
 				src : 'vYzD9oucKD4',
@@ -216,21 +263,6 @@ var projects = {
 				src : 'l661hHkbOio',
 				col : 1,
 				dims : [1356,1284]
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha7.jpg',
-				col : 1
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha9.jpg',
-				col : 1
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha11.jpg',
-				col : 1
 			},
 			{
 				type : 'image',
@@ -248,6 +280,11 @@ var projects = {
 				col : 2
 			},
 			{
+				type : 'image',
+				src : 'remolacha/remolacha8.jpg',
+				col : 2
+			},
+			{
 				type : 'youtube',
 				src : '8GULYqg1ZKY',
 				col : 2,
@@ -258,21 +295,6 @@ var projects = {
 				src : 'ZDLa8ag_U1U',
 				col : 2,
 				dims : [1356,1284]
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha8.jpg',
-				col : 2
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha10.jpg',
-				col : 2
-			},
-			{
-				type : 'image',
-				src : 'remolacha/remolacha12.jpg',
-				col : 2
 			}
 		]
 	},
@@ -283,6 +305,26 @@ var projects = {
 		preview : require('./Mugshots'),
 		info : require( './Mugshots/copy.pug' ),
 		assets : [
+			{
+				type : 'image',
+				src : 'mugshots/top1.gif',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'mugshots/top2.gif',
+				col : 2
+			},
+			{
+				type : 'image',
+				src : 'mugshots/cr1.gif',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'mugshots/cr22.gif',
+				col : 2
+			},
 			{
 				type : 'image',
 				src : 'mugshots/ms1.gif',
@@ -398,15 +440,27 @@ var projects = {
 		info : require( './Maslo/copy.pug' ),
 		assets : [
 			{
-				type : 'image',
-				src : 'maslo/maslo1.jpg',
-				col : 1
+				type : 'youtube',
+				src : 'G7TJxwZ3qII',
+				col : 1,
+				params : [11,20],
+				dims : [1920,1080]
 			},
 			{
 				type : 'youtube',
 				src : 'G7TJxwZ3qII',
 				col : 2,
 				dims : [1920,1080]
+			},
+			{
+				type : 'image',
+				src : 'maslo/proto1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'maslo/proto2.jpg',
+				col : 2
 			},
 			{
 				type : 'image',
@@ -427,13 +481,6 @@ var projects = {
 				type : 'image',
 				src : 'maslo/maslo5.jpg',
 				col : 1
-			},
-			{
-				type : 'youtube',
-				src : 'G7TJxwZ3qII',
-				col : 1,
-				dims : [1920,1080],
-				params : [11,20]
 			},
 			{
 				type : 'youtube',
@@ -520,6 +567,16 @@ var projects = {
 		preview : require('./Eina'),
 		info : require( './Eina/copy.pug' ),
 		assets : [
+			{
+				type : 'image',
+				src : 'eina/top1.jpg',
+				col : 1
+			},
+			{
+				type : 'image',
+				src : 'eina/top2.jpg',
+				col : 2
+			},
 			{
 				type : 'image',
 				src : 'eina/t1.gif',
@@ -752,12 +809,6 @@ var projects = {
 				type : 'image',
 				src : 'bulli/9.jpg',
 				col : 2
-			},
-			{
-				type : 'code',
-				src : require('./Bulli/Line'),
-				params : { select : 4 },
-				col : 1
 			},
 			{
 				type : 'image',

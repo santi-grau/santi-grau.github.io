@@ -1,3 +1,6 @@
+var EventEmitter = require('events').EventEmitter;
+var inherits = require( 'util' ).inherits;
+
 var Preloader = function(){
 	this.node = document.getElementById( 'preloader' );
 	this.inner = this.node.childNodes[0];
@@ -15,6 +18,8 @@ var Preloader = function(){
 
 }
 
+inherits( Preloader, EventEmitter );
+
 Preloader.prototype.update = function( v ){
 	this.percentLoaded = v;
 }
@@ -28,8 +33,9 @@ Preloader.prototype.progressBar = function( q ){
 	if( q == this.loaderLength ){
 		setTimeout( function(){
 			this.node.classList.add( 'loaded' );
+			this.emit('loaded');
 			this.loaded = true;
-			this.inner.innerHTML = ' [ SCROLL FOR MORE ]';
+			this.inner.innerHTML = 'SCROLL FOR MORE';
 		}.bind( this ), 300 );
 	}
 }

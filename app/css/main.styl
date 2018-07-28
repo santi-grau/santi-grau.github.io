@@ -1,5 +1,9 @@
 *::selection
 	background rgba( 255, 0, 0, 1 )
+
+::-webkit-scrollbar
+	display: none;
+
 html
 	padding 0
 	margin 0
@@ -16,48 +20,31 @@ body
 	width 100%
 	min-height 100%
 	overflow hidden
-	&.mobile
-		#main
-			#threeLayer
-				opacity 0.5	
-			#domLayer
-				position absolute
-				width 90vw
-				margin-top -100px
-				left 5vw
-				#projectList
-					#aboutBut
-						display none
-					#about
-						opacity 1
-					.project
-						display none
-	#bg
-		position fixed
-		z-index 0
-		top 0
-		left 0
-		width 100vw
-		height 100vh
-		background radial-gradient( #333 10%, #161616 80% )
 	
 	&.projectLoaded
 		overflow auto
+		#projectLayer
+			.info
+				opacity 1
 	&.colorInvert
-		color #000000
-		#bg
-			background #ddd
 		#main
+			#bg
+				background #ddd
 			#domLayer
 				p
 					span
+						color rgba( 0, 0, 0, 1 )
 						background rgba( 255, 255, 255, 0.5 )
 						a
+							font-weight 400
 							background rgba( 0, 0, 0, 0.9 )
 							color rgba( 255, 255, 255, 0.9 )
 			
 		#projectLayer
-			color #ffffff
+			color #000000
+			a
+				background rgba( 0, 0, 0, 0.9 )
+				color rgba( 255, 255, 255, 0.9 )
 	#main
 		position fixed
 		z-index 1
@@ -68,14 +55,22 @@ body
 		&.project
 			#domLayer
 				display none
-	
+		#bg
+			position fixed
+			z-index 0
+			top 0
+			left 0
+			width 100vw
+			height 100vh
+			background radial-gradient( #333 10%, #161616 80% )
+			cursor pointer
 		#threeLayer
 			position fixed
 			width 100vw
 			height 100vh
 			top 0
-			left 0	
-				
+			left 0
+			pointer-events none
 		#domLayer
 			opacity 0
 			position relative
@@ -83,14 +78,15 @@ body
 			height 100vh
 			margin-left 30px
 			z-index 2
-			transition opacity 1.4s
+			transition opacity 0.6s
 			p
 				margin 0
 				padding 0
 				span
+					color rgba( 255, 255, 255, 1 )
 					background rgba( 255, 255, 255, 0.3 )
 					a
-						font-weight 400
+						font-weight 500
 						padding 0 4px
 						background rgba( 255, 255, 255, 0.9 )
 						color rgba( 0, 0, 0, 0.9 )
@@ -100,111 +96,153 @@ body
 						
 			&.ready
 				opacity 1
-#aboutPage
-	z-index 10
-	position absolute
-	width 100%
-	background rgba( 0, 0, 0, 0.9 )
-	min-height 100%
-	font-size 42px
-	line-height 60px
-	display none
-	
-#projectLayer
-	position relative
-	z-index 2
-	#closebut
-		cursor w-resize
-		position fixed
-		z-index 0
-		width 100vw
-		height 100vh
-		top 0
-		left 0
-		#modulesContainer
-			pointer-events none
-			.moduleCol
-				opacity 0		
-				
-	.info
-		pointer-events none
+
+	#projectLayer
 		position relative
 		z-index 2
-		height 100vh
-		width 100vw
-		// top 0
-		// left 0
-		// text-align center
-		.inner
-			position relative
-			// pointer-events auto
-			width 46vw
+		a
+			text-decoration none
+			background rgba( 255, 255, 255, 0.9 )
+			color rgba( 0, 0, 0, 0.9 )
+			padding 0 4px
+		#closebut
+			font-weight 500
+			z-index 10
+			position fixed
+			top 2vw
 			left 2vw
-			// top 50%
-			// left 50%
-			// margin-right -50%
-			// transform translate( -50%, 0%)
-			.title
-			.copy
-				margin-top 16px
-				p
-					a
-						color inherit
-	#preloader
-		font-size 12px
-		position fixed
-		bottom 3vw
-		left 2vw
-		width 94vw
-		transition opacity 0.5s
-		&.loaded
-			.inner
-				animation pulse 1s infinite
-	#modulesContainer
-		pointer-events none
-		position relative
-		z-index 0
-		width 96vw
-		margin 0 auto 0
-		content ""
-		display table
-		clear both
-		.moduleCol
-			width 47.8vw
-			&#modulesLeft
-				float left
-			&#modulesRight
-				float right
-			
-		.module
+		.info
+			pointer-events none
 			position relative
-			margin-bottom 0.4vw
-			width 100%
-			.overlay
+			z-index 2
+			height 100vh
+			width 100vw
+			opacity 0
+			transition opacity 0.6s
+			.inner
 				position absolute
-				top 0
-				left 0
-				width 100%
-				height 100%
-				opacity 0
-				background #666666
-				.inner
-					word-wrap break-word
-			img
-				width 100%
-				height auto
-				display block
-			iframe
-				width 100% !important
-				height 100% !important
-				display block
-			video
-				width 100%
-				height auto
-				display block
-			&.code
-				height 47vw
+				pointer-events auto
+				width 46vw
+				left 2vw
+				bottom 60px
+				.title
+				.copy
+					margin-top 16px
 
+		#preloader
+			position fixed
+			bottom 3vw
+			left 2vw
+			width 94vw
+			&.loaded
+				.inner
+					animation pulse 1s infinite
+		#modulesContainer
+			pointer-events none
+			position relative
+			z-index 0
+			width 96vw
+			margin 0 auto 0
+			content ""
+			display table
+			clear both
+			.moduleCol
+				width 47.8vw
+				&#modulesLeft
+					float left
+				&#modulesRight
+					float right
+				
+			.module
+				position relative
+				margin-bottom 0.4vw
+				width 100%
+				.overlay
+					position absolute
+					top 0
+					left 0
+					width 100%
+					height 100%
+					opacity 0
+					background #666666
+					.inner
+						word-wrap break-word
+				img
+					width 100%
+					height auto
+					display block
+				iframe
+					width 100% !important
+					height 100% !important
+					display block
+				video
+					width 100%
+					height auto
+					display block
+				&.code
+					height 47vw
+	.mobileOnly
+		display none
+body
+	&.mobile
+		
+		font-size 12px
+		line-height 16px
+		font-weight 700
+		// overflow auto
+		.mobileOnly
+			display inline
+		#main
+			overflow-y scroll
+			-webkit-overflow-scrolling touch
+			#threeLayer
+				opacity 1
+				pointer-events auto
+			#domLayer
+				position relative
+				width 94vw
+				left 3vw
+				margin-left 0
+				height 100vh
+				margin-bottom 20px
+				&.clone
+					padding-top 0
+				.cont
+					padding-top 37vh
+					p
+						&.filler
+							display none
+						span
+							color rgba( 0, 0, 0, 0.8 )
+							background rgba( 255, 255, 255, 0.8 )
+							.mobileOnly
+								background rgba( 255, 255, 255, 0 )
+							a
+								font-weight 700
+								background rgba( 0, 0, 0, 0 )
+								color rgba( 0, 0, 255, 0.9 )
+								&.active
+									background rgba( 0, 0, 255, 1 )
+									color rgba( 255, 255, 255, 0.9 )
+		#projectLayer
+			font-weight 400
+			.info
+				height auto
+				.inner
+					position relative
+					pointer-events auto
+					width 94vw
+					left 3vw
+					margin-top 80vh
+					.title
+					.copy
+						margin-top 16px
+			#preloader
+				&.loaded
+					opacity 0
+			#modulesContainer
+				pointer-events auto
+					
 @keyframes pulse
 	0%
 		opacity 0

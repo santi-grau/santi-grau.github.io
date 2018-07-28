@@ -53,8 +53,6 @@ var Santamonica = function(){
 	var size = 10;
 	var divisions = 10;
 
-	var gridHelper = new THREE.GridHelper( size, divisions );
-	this.scene.add( gridHelper );
 	this.scene.add( this.group );
 }
 

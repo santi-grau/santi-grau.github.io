@@ -52,10 +52,10 @@ float snoise(vec2 v) {
 
 void main(){
 	vec4 res = texture2D( tDiffuse, vUv );
-	float n = snoise( vUv * 1000.0 + seed );
+	float n = snoise( vUv * 300.0 + seed );
 
-	if( n > 0.9 ) res = vec4( n * 0.5 );
-	if( n < -0.9 ) res = vec4( vec3( 1.0 + n * 0.5 ), 1.0 );
+	if( n > 0.8 ) res = vec4( n * 0.5 );
+	if( n < -0.8 ) res = vec4( vec3( 1.0 + n * 0.5 ), 1.0 );
 
 	res.rgb = finalLevels( res.rgb, 0.1176470588, 0.95, 1.0);
 

@@ -2,7 +2,12 @@ Proper code website...
 
 # Todo
 
-[ ] Project redesign and sequence
-[ ] Project assets
-[ ] Mobile
-[ ] About page
+DSS, DG
+[ ] Video loops?
+[ ] Reconsider home?
+
+
+ASSETS
+	JANSKY
+	JINMIN
+	PINTEREST

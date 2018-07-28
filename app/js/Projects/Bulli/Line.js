@@ -4,6 +4,7 @@ var Bulli = function( node, params ){
 	this.node = node;
 	this.canvas = document.createElement('canvas');
 
+	this.node.style.background = '#ffffff'
 	this.ctx = this.canvas.getContext('2d');
 	this.node.appendChild( this.canvas );
 
@@ -27,6 +28,12 @@ var Bulli = function( node, params ){
 	this.ctx.scale(2,2);
 	this.ctx.lineWidth = 0.5;
 
+	var modelDims = this.data.dims;
+	var modelAR = modelDims.height / modelDims.width;
+	var stageAR = this.node.offsetHeight / this.node.offsetWidth;
+	if( modelAR > stageAR ) this.s = this.node.offsetHeight / modelDims.height;
+	else this.s = this.node.offsetWidth / modelDims.width;
+	this.s *= 0.9;
 	this.ready = true;
 }
 
@@ -44,7 +51,10 @@ Bulli.prototype.addLines = function( ){
 		if( this.coordCount[i] < MAX_POINTS ) finished = false;
 
 		for ( var j = this.coordCount[i]; j < count ; j ++ ) {
-			var x = this.data.cs[i][j][0] + this.node.offsetWidth / 2 - this.data.dims.minx - ( this.data.dims.maxx - this.data.dims.minx ) / 2, y = this.data.cs[i][j][1] + this.node.offsetHeight / 2 - this.data.dims.miny - ( this.data.dims.maxy - this.data.dims.miny ) / 2;
+			var x = ( this.data.cs[i][j][0] -this.data.dims.minx ) * this.s;
+			var y = ( this.data.cs[i][j][1] -this.data.dims.miny ) * this.s;
+			x += ( this.node.offsetWidth - this.data.dims.width * this.s ) / 2;
+			y += ( this.node.offsetHeight - this.data.dims.height * this.s ) / 2;
     		this.ctx.lineTo( x, y );
 		}
 		this.coordCount[i] += add - 1;
