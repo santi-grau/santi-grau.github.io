@@ -11,8 +11,6 @@ html
     link(href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,500,700", rel="stylesheet")
     link(rel='stylesheet', id='mainStylesheet' href='css/main.css')
   body
-    #ie
-        | Still using Internet Explorer? 😂 do yourself ( and everyone else ) a favor: #[a( href='https://www.google.com/chrome/', target='_blank' ) Download a real browser]
     #messenger.active
         | Loading ...
     #main
@@ -54,12 +52,10 @@ html
                             | Any cool projects in mind? #[a( href='javascript:void(0)', id = '6D61696C746F3A' ) Contact me]#[br]
                             | I also have an #[a( href='https://www.instagram.com/____santi____/', target='_blank' ) Instagram account] and a #[a( href='https://www.linkedin.com/in/santigrau/', target='_blank' ) LinkedIn]
     
-    script.
-         if( ( /*@cc_on!@*/false || !!document.documentMode ) || ( !isIE && !!window.StyleMedia ) )document.getElementById('ie').classList.add('active');
-
     script(src='https://www.youtube.com/iframe_api')
     script(src='scripts/three.min.js')
     script(src='js/main.js')
+    script(src='scripts/ie.js')
     script.
         if (!window.location.hash.indexOf("localhost") >= 0 ){
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
