@@ -1,0 +1,110 @@
+html, body
+    width 100%
+    height 100%
+    padding 0
+    margin 0
+    font-family: 'IBM Plex Sans', sans-serif;
+    background #000000
+    overflow hidden !important
+    &:active
+        h1
+            display none
+h1
+    position fixed
+    margin 0
+    padding 0
+    top 20px
+    left 20px
+    z-index 100
+    font-size 140px
+    line-height 110px
+    letter-spacing -0.1px
+    word-break break-all
+    pointer-events none
+    text-decoration underline
+    font-weight 700
+
+h2
+    position fixed
+    margin 0
+    padding 0
+    top 20px
+    right 20px
+    text-decoration none
+    color rgba(255,255,0,1)
+    z-index 100
+
+body.thumb
+    background #000000
+    app-container
+        app-module
+            box-sizing: border-box;
+            width 50vw
+            height 50vh
+            float left
+            border solid 5px #000000
+
+#myVideo
+    position absolute
+    left 50%
+    top 50%
+    transform translate3d( -50%, -50%, 0 )
+    width 90%
+    height 90%
+
+app-container
+    width 100%
+    height 100vh
+    height -webkit-fill-available
+    position fixed
+    display block
+    scroll-snap-type y mandatory
+    overflow-y scroll
+    -webkit-overflow-scrolling: touch;
+    // pointer-events none
+    app-module
+        width 100vw
+        height 100vh
+        position relative
+        scroll-snap-align: start;
+        top 0
+        display block
+        z-index auto
+        &.banner-right
+            animation bannerRight 10000s infinite linear
+        .inner
+            position relative
+            
+            top 0
+            left 0
+            width 100%
+            height 100%
+            pointer-events none
+            iframe
+                border none
+                width 100%
+                height 100%
+                height -webkit-fill-available
+        .label
+            opacity 0
+            display none
+            transition opacity 0.1s
+            position fixed
+            bottom 20px
+            // left 20px
+            color #666666
+            pointer-events none
+            font-family: 'IBM Plex Mono', monospace;
+            font-size 12px
+            left 0
+            padding 4px 10px 4px 20px
+        &.is-intersecting
+            .label
+                opacity 1
+                transition opacity 1s 0.1s
+
+@keyframes bannerRight
+    0%
+        background-position-x 0
+    100%
+        background-position-x 1000000%

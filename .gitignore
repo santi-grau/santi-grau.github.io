@@ -1,4 +1,6 @@
-node_modules
-npm-debug.log
-img/
 .DS_Store
+src/.cache
+src/dist
+src/node_modules
+src/npm-debug.log
+src/package-lock.json
