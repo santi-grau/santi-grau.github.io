@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel app/views/index.pug",
+    "start": "parcel app/views/*.pug",
     "build": "parcel build app/views/index.pug --no-source-maps --out-dir ./../ --public-url '.'"
   },
   "keywords": [],
