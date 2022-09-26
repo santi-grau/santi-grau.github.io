@@ -6,16 +6,15 @@ html, body
     margin 0
     font-family: 'IBM Plex Sans', sans-serif;
     background #000000
+    text-rendering optimizeLegibility
     overflow hidden !important
-    &:active
-        h1
-            display none
+    font-weight 400
+
 *::-webkit-scrollbar
     display none
-
 *
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none
+    scrollbar-width: none
 
 h1
     position fixed
@@ -24,17 +23,16 @@ h1
     top 20px
     left 20px
     z-index 100
-    font-size 440px
-    line-height 410px
-    letter-spacing -0.1px
+    font-size 80px
+    line-height 0.9em
+    letter-spacing -0.02em
     word-break break-all
-    
     pointer-events none
     text-decoration underline
     font-weight 700
     opacity 0
     transition opacity 0.6s
-
+    
 app-container
     width 100%
     height 100%
@@ -42,11 +40,9 @@ app-container
     position absolute
     display block
     scroll-snap-type y mandatory
-    // scroll-snap-stop always
+    scroll-behavior: smooth;
     overflow-y scroll
     overflow-x hidden
-    -webkit-overflow-scrolling: touch;
-    // pointer-events none
     &.scrolling
         h1
          opacity 1
@@ -68,7 +64,6 @@ app-container
         height 100%
         position relative
         scroll-snap-align: start;
-        // scroll-snap-stop always
         top 0
         display block
         z-index auto
@@ -86,6 +81,7 @@ app-container
             position relative
             display block
             overflow hidden
+            transition opacity 0.6s
             app-asset, app-video
                 width 100vw
                 height 100%
@@ -102,7 +98,7 @@ app-container
                 transition opacity 1s
                 &.active
                     opacity 1
-                    transition opacity 1s 0.2s
+                    transition opacity 1s
             *
                 pointer-events none
             iframe
@@ -112,46 +108,75 @@ app-container
                 left 50%
                 transform translate3d( -50%, -50%, 0    )
         &.info
-            app-slider
+            app-slide
                 opacity 0.3
             .info
                 transform translate3d( 0, 0, 0 )
                 opacity 1
                 pointer-events auto
+                .infoToggle
+                    opacity 1
             .label
                 transform translate3d( 0, 20px, 0 )
 
         .label
             opacity 0
-            position fixed
+            position absolute
             bottom 0px
-            color #ffffff
+            color #dedede
             pointer-events none
             font-family: 'IBM Plex Mono', monospace;
-            font-size 12px
+            font-size 11px
             transform translate3d( 0, -20px, 0 )
             transition transform 0.9s cubic-bezier(0.25, 1, 0.5, 1) , opacity 0.1s
-            left 10px
-            padding 4px 10px 4px 10px
+            left 20px
+            // padding 4px 10px 4px 10px
+            margin 0
+            padding 0
             pointer-events none
-            background #000000
+            list-style-type none
             border-radius 1px
+            li
+                margin 0
+                padding 0
+                line-height 1.27em
+                &:first-child
+                    font-weight 600
+                    letter-spacing -0.02em
+                    color #ffffff
+                    &::before
+                        content ' '
+                a
+                    color inherit
+                &::before
+                    content ''
 
         .info
             position absolute
-            bottom 20px
+            bottom 40px
             transform translate3d( 0, -40px, 0 )
             opacity 0
             transition transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s
             font-family: 'IBM Plex Mono', monospace;
             font-size 12px
-            color #ababab
+            line-height 1.27em
+            color #ffffff
             max-width 480px
             padding 4px 10px 4px 20px
             pointer-events none
+            .infoToggle
+                transition opacity 0.6s 0.3s
+                font-size 11px
+                opacity 0
+            a
+                color inherit
             
         &.active
+            &.info
+                .label
+                    opacity 0
+                    transition transform 0.9s cubic-bezier(0.25, 1, 0.5, 1) , opacity 1s
             .label
                 pointer-events auto
                 opacity 1
-                transition transform 0.9s cubic-bezier(0.25, 1, 0.5, 1) , opacity 1s 0.1s
+                transition transform 0.9s cubic-bezier(0.25, 1, 0.5, 1) , opacity 1s

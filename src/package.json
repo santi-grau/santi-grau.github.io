@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel app/views/*.pug",
-    "build": "parcel build app/views/index.pug --no-source-maps --out-dir ./../ --public-url '.'"
+    "build": "parcel build app/views/*.pug --no-source-maps --out-dir ./../ --public-url '.'"
   },
   "keywords": [],
   "author": "proper-code",

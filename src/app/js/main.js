@@ -66,7 +66,13 @@ class AppSlide extends HTMLElement {
 class AppModule extends HTMLElement {
 	connectedCallback() {
 		observer.observe( this )
+		
+		
+
 		Object.values( this.querySelectorAll('.info') ).forEach( b => b.innerHTML += '<br/><a class="infoToggle" href="javascript:void(0)">Less</a>' )
+		if( this.querySelectorAll('.info').length ) {
+			this.querySelectorAll('.label')[ 0 ].innerHTML += '<li><a class="infoToggle" href="javascript:void(0)">More </a></li>'
+		}
 		Object.values( this.querySelectorAll('.infoToggle') ).forEach( b => b.addEventListener( 'click', _=> this.classList.toggle( 'info' ) ) )
 	}
 	onFocus(){
@@ -75,6 +81,7 @@ class AppModule extends HTMLElement {
 	}
 	onBlur(){
 		this.classList.remove( 'active' )
+		this.classList.remove( 'info' )
 		Object.values( this.querySelectorAll('app-slide') ).forEach( n => n.dettach() )
 	}
 }
@@ -83,24 +90,28 @@ class AppContainer extends HTMLElement {
     connectedCallback() {
         this.logo = this.querySelector( 'h1' )
 		this.addEventListener('scroll', _=> this.flicker() )
-		this.flicker()
-		this.isSrolling = false
+		this.classList.add('scrolling')
+		this.logo.style.color = 'rgba( 255, 255, 255, 1 )'
+		this.isScrolling = false
     }
 
 	scrollEnd(){
-		this.isSrolling = false
-		this.classList.remove('scrolling')
+		this.isScrolling = false
+		if( Math.random() > 0.5 ) this.classList.remove('scrolling')
+		// let c = Math.floor( Math.round( Math.random() ) * 255 )
+		// this.logo.style.color = 'rgba( ' + c + ', ' + c + ', ' + c + ', 1 )'
 	}
 
 	flicker(){
-		let c = Math.floor( Math.round( Math.random() ) * 255 )
-        // this.logo.style.color = 'rgba( ' + c + ', ' + c + ', ' + c + ', 1 )'
-		this.logo.style.color = 'rgba( ' + Math.floor( ( Math.random() ) * 255 ) + ', ' + Math.floor( ( Math.random() ) * 255 ) + ', ' + Math.floor( ( Math.random() ) * 255 ) + ', 1 )'
-        this.logo.style.textDecoration = ( Math.random() > 0.5 ) ? 'none' : 'underline'
+		// if( !this.isScrolling  ) this.logo.style.fontSize = 11 + Math.random() * 200 + 'px'
+        let c = Math.floor( Math.round( Math.random() ) * 255 )
+		this.logo.style.color = 'rgba( ' + c + ', ' + c + ', ' + c + ', 1 )'
+		// this.logo.style.color = 'rgba( ' + Math.floor( ( Math.random() ) * 255 ) + ', ' + Math.floor( ( Math.random() ) * 255 ) + ', ' + Math.floor( ( Math.random() ) * 255 ) + ', 1 )'
+        // this.logo.style.textDecoration = ( Math.random() > 0.5 ) ? 'none' : 'underline'
 		if( this.scrollTimeout ) clearTimeout( this.scrollTimeout )
 		this.scrollTimeout = setTimeout( _=> this.scrollEnd(), 100  )
-		if( !this.isSrolling ) this.classList.add('scrolling')
-		this.isSrolling = true
+		if( !this.isScrolling ) this.classList.add('scrolling')
+		this.isScrolling = true
 	}
 }
 
