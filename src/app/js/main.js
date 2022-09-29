@@ -114,6 +114,11 @@ class AppContainer extends HTMLElement {
 		this.isScrolling = true
 	}
 }
+document.addEventListener('gesturestart', e => {
+    e.preventDefault();
+    return false;
+});
+function touchStarted() { return false; }
 
 window.customElements.define( 'app-slide', AppSlide )
 window.customElements.define( 'app-module', AppModule )

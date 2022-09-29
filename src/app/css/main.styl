@@ -10,11 +10,16 @@ html, body
     overflow hidden !important
     font-weight 400
 
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
 *::-webkit-scrollbar
     display none
 *
     -ms-overflow-style: none
     scrollbar-width: none
+    -webkit-user-select none
+    -webkit-text-size-adjust 100%
 
 h1
     position fixed
@@ -71,7 +76,7 @@ app-container
         &.about
             color #ffffff
             font-family: 'IBM Plex Mono', monospace;
-            font-size 14px
+            font-size 12px
             line-height 1.3em
             .inner
                 margin 120px 20px 20px 20px
